@@ -65,10 +65,11 @@ var game = {
         me.state.SPENDEXP = 112;
         me.state.NEW = 113;
         me.state.LOAD = 114;
+        me.state.CONTROL = 115;
 
 	// Initialize the audio.
 	me.audio.init("mp3,ogg");
-
+ 
 	// Set a callback to run when loading is complete.
 	me.loader.onload = this.loaded.bind(this);
 
@@ -103,7 +104,7 @@ var game = {
                 me.state.set(me.state.SPENDEXP, new game.SpendExp());
                 me.state.set(me.state.NEW, new game.NewProfile());
                 me.state.set(me.state.LOAD, new game.LoadProfile());
-                me.state.set(me.state.CONTROLS, new game.ControlsScreen());
+                me.state.set(me.state.CONTROL, new game.Control());
 
 
 

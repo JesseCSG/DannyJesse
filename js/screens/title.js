@@ -76,7 +76,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     newGame: function() {
                         me.input.releasePointerEvent('pointerdown', this);
                         me.input.releasePointerEvent('pointerdown', game.data.option3);
-                        me.state.change(me.state.LOAD);
+                        me.state.change(me.state.CONTROL);
                     }
                 }));
                 // adds option 2 onto screen.
