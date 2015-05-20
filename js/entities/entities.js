@@ -12,6 +12,8 @@ game.PlayerEntity = me.Entity.extend({
         this.setFlags();
         // allows screen to follow player.
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        // allows four directional movement.
+        this.body.gravity = 0;
         //  sets animations to player.
         this.addAnimation();
         // sets current animations to idle.
@@ -41,7 +43,7 @@ game.PlayerEntity = me.Entity.extend({
     setAttributes: function() {
         this.health = game.data.playerHealth;
         this.body.setVelocity(game.data.playerMoveSpeed, 20);
-        this.attack = game.data.playerAttack;
+        this.attack = game.data.playerAttack;        
     },
     
     setFlags: function() {
@@ -125,34 +127,21 @@ game.PlayerEntity = me.Entity.extend({
     },
     
     moveUp: function() {
-        //Sets the position of my x by the velocity defined above in
+        //Sets the position of my y by the velocity defined above in
         //setVelocity() and multiplying it by me.timer.tick.
         //me.timer.tick makes the movement look smooth
         this.body.vel.y -= this.body.accel.y * me.timer.tick;
         this.facing = "up";
-        this.flipY(false);
     },
     
     moveDown: function() {
-        //Sets the position of my x by the velocity defined above in
+        //Sets the position of my y by the velocity defined above in
         //setVelocity() and multiplying it by me.timer.tick.
         //me.timer.tick makes the movement look smooth
         this.body.vel.y += this.body.accel.y * me.timer.tick;
         this.facing = "down";
-        this.flipY(false);
     },
-    
-    jump: function() {
-        // make sure we are not already jumping or falling
-        if (!this.body.jumping && !this.body.falling) {
-            // set current vel to the maximum defined value
-            // gravity will then do the rest
-            this.body.vel.y = -this.body.maxVel.y * me.timer.tick;
-            // set the jumping flag
-            this.body.jumping = true;
-        }
-    },
-    
+        
     checkAbilityKeys: function() {
         if (me.input.isKeyPressed("skill1")) {
             //this.speedBurst();

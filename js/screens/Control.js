@@ -1,4 +1,4 @@
-game.Control = me.ScreenObject.extend({
+game.ControlScreen = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
@@ -24,7 +24,7 @@ game.Control = me.ScreenObject.extend({
                     
                     draw: function(renderer) {
                         // draws text below.
-                        this.font.draw(renderer.getContext(), "Pick A USERNAME And PASSWORD.", this.pos.x, this.pos.y + 20);
+                        this.font.draw(renderer.getContext(), "", this.pos.x, this.pos.y + 20);
                     },
                     
                     update: function() {
