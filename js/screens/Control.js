@@ -24,7 +24,11 @@ game.ControlScreen = me.ScreenObject.extend({
                     
                     draw: function(renderer) {
                         // draws text below.
-                        this.font.draw(renderer.getContext(), "", this.pos.x, this.pos.y + 20);
+                        this.font.draw(renderer.getContext(), "CONTROLS: ", this.pos.x, this.pos.y + 20);
+                        this.font.draw(renderer.getContext(), "Arrrows Keys(Up, Down, Left, Right) for Movement", this.pos.x + 10, this.pos.y + 40);
+                        this.font.draw(renderer.getContext(), "V for Pause.", this.pos.x + 10, this.pos.y + 60);
+                        this.font.draw(renderer.getContext(), "B for In-Game Purchases.", this.pos.x + 10, this.pos.y + 80);
+                        this.font.draw(renderer.getContext(), "A for Attack.", this.pos.x + 10, this.pos.y + 100);
                     },
                     
                     update: function() {
