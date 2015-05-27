@@ -66,6 +66,7 @@ var game = {
         me.state.NEW = 113;
         me.state.LOAD = 114;
         me.state.CONTROL = 115;
+        me.state.PLOT = 116;
 
 	// Initialize the audio.
 	me.audio.init("mp3,ogg");
@@ -104,8 +105,8 @@ var game = {
                 me.state.set(me.state.SPENDEXP, new game.SpendExp());
                 me.state.set(me.state.NEW, new game.NewProfile());
                 me.state.set(me.state.LOAD, new game.LoadProfile());
-                me.state.set(me.state.CONTROL, new game.Control());
-
+                me.state.set(me.state.CONTROL, new game.ControlScreen());
+                me.state.set(me.state.PLOT, new game.PlotScreen());
 
 
 		// Start the game.

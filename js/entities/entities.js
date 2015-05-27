@@ -23,12 +23,12 @@ game.PlayerEntity = me.Entity.extend({
     setSuper: function(x, y) {
         this._super(me.Entity, 'init', [x, y, {
                 image: "player",
-                width: 64,
-                height: 64,
-                spritewidth: "64",
-                spriteheight: "64",
+                width: 25,
+                height: 24,
+                spritewidth: "25",
+                spriteheight: "24",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 64, 64)).toPolygon();
+                    return(new me.Rect(0, 0, 25, 24)).toPolygon();
                 }
             }]);
     },
@@ -55,7 +55,9 @@ game.PlayerEntity = me.Entity.extend({
     
     addAnimation: function() {
         this.renderable.addAnimation("idle", [78]);
-        this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
+        this.renderable.addAnimation("walk", [38, 39], 80);
+        this.renderable.addAnimation("walkup", [61,62], 80);
+        this.renderable.addAnimation("death", [404, 405, 406, 407], 80);
         this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 80);
 
     },
@@ -184,7 +186,12 @@ game.PlayerEntity = me.Entity.extend({
                 this.renderable.setCurrentAnimation("walk");
 
             }
-        } else if (!this.renderable.isCurrentAnimation("attack")) {
+        } else if (this.body.vel.y !== 0 && !this.renderable.isCurrentAnimation("attack")) {
+            if (!this.renderable.isCurrentAnimation("walkup")) {
+                this.renderable.setCurrentAnimation("walkup");
+
+            }
+        }else if (!this.renderable.isCurrentAnimation("attack")) {
             this.renderable.setCurrentAnimation("idle");
         }
     },
@@ -228,6 +235,7 @@ game.PlayerEntity = me.Entity.extend({
         var ydif = this.pos.y - response.b.pos.y;
         // stops movement of player.
         this.stopMovement(xdif);
+        this.stopMovemnet2(ydif);
         // if attacking, attack enemy creep.
         if (this.checkAttack(xdif, ydif)) {
             this.hitCreep(response);
@@ -245,6 +253,20 @@ game.PlayerEntity = me.Entity.extend({
             if (this.facing === "right") {
                 // if attacking and facing right, stop player.
                 this.body.vel.x = 0;
+            }
+        }
+    },
+    
+    stopMovement2: function(ydif) {
+        if (ydif > 0) {
+            if (this.facing === "up") {
+                // if attacking and facing up, stop player.
+                this.body.vel.y = 0;
+            }
+        } else {
+            if (this.facing === "down") {
+                // if attacking and facing down, stop player.
+                this.body.vel.y = 0;
             }
         }
     },

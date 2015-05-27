@@ -4,6 +4,8 @@ game.PlayScreen = me.ScreenObject.extend({
 	 */
 	onResetEvent: function() {
 		// reset the score
+                me.audio.playTrack("");
+                
 		game.data.score = 0;
                 
                 // Loads levels from Tiled.

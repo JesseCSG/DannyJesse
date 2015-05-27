@@ -1,10 +1,8 @@
 game.resources = [
-
 	/* Graphics. 
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
-	 */        
-        {name: "background", type:"image", src: "data/img/background.png"},
+	 */
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "player", type:"image", src: "data/img/player1.png"},
         {name: "creep", type:"image", src: "data/img/zambe.png"},
@@ -12,7 +10,9 @@ game.resources = [
         {name: "exp-screen", type:"image", src: "data/img/loadpic.png"},
         {name: "gold-screen", type:"image", src: "data/img/spend.png"},
         {name: "pause-screen", type:"image", src: "data/img/pause-screen.png"},
+        {name: "plot-screen", type:"image", src: "data/img/plot-screen.png"},
         {name: "load-screen", type:"image", src: "data/img/loadpic.png"},
+        {name: "control-screen", type: "image", src: "data/img/deepForest.png"},
         {name: "new-screen", type:"image", src: "data/img/Drama man.png"},
         {name: "fireball", type:"image", src: "data/img/fireball_1.png"},
         {name: "Bar", type:"image", src: "data/img/Bar.png"},
@@ -31,7 +31,7 @@ game.resources = [
         {name: "Tree2", type:"image", src: "data/img/Tree2.png"},
         {name: "Wall", type:"image", src: "data/img/Wall.png"},
         {name: "arrow", type:"image", src: "data/img/arrow.png"},
-        {name: "darkGrass", type:"image", src: "data/img/darkGrass.png"},
+        {name: "darkGrass", type:"image", src: "data/img/darkGrass1.png"},
         {name: "dirt1", type:"image", src: "data/img/dirt1.png"},
         {name: "flower1", type:"image", src: "data/img/flower1.png"},
         {name: "flower2", type:"image", src: "data/img/flower2.png"},
@@ -40,7 +40,6 @@ game.resources = [
         {name: "lilypad2", type:"image", src: "data/img/lilypad2.png"},
         {name: "pebble1", type:"image", src: "data/img/pebble1.png"},
         {name: "pebble2", type:"image", src: "data/img/pebble2.png"},
-        {name: "refineMatIcon", type:"image", src: "data/img/refineMatIcon.png"},
         {name: "road", type:"image", src: "data/img/road1.png"},
         {name: "sand", type:"image", src: "data/img/sand1.png"},
         {name: "soil", type:"image", src: "data/img/soil1.png"},
@@ -67,13 +66,17 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
         
-        {name: "level01", type: "tmx", src: "data/map/test.tmx"}
+        {name: "level01", type: "tmx", src: "data/map/Test1.tmx"},
 
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-
+        {name: "zeldaTheme", type: "audio", src: "data/bgm/"},
+        {name: "tetrisTheme", type: "audio", src: "data/bgm/"},
+        {name: "mozartRemix", type: "audio", src: "data/bgm/"},
+        {name: "creepPiano", type: "audio", src: "data/bgm/"},
+        {name: "Elev", type: "audio", src: "data/bgm/"}
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}

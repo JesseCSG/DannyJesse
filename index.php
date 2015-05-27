@@ -50,8 +50,6 @@
 		<script type="text/javascript" src="js/resources.js"></script>
                 <!-- Inputs all entities pages for use. -->
 		<script type="text/javascript" src="js/entities/entities.js"></script>
-                <script type="text/javascript" src="js/entities/EnemyBaseEntity.js"></script>
-                <script type="text/javascript" src="js/entities/PlayerBaseEntity.js"></script>
                 <script type="text/javascript" src="js/entities/EnemyCreep.js"></script>
                 <script type="text/javascript" src="js/entities/PlayerCreep.js"></script>
                 <script type="text/javascript" src="js/entities/SpearThrow.js"></script>
@@ -72,6 +70,8 @@
                 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
                 <script type="text/javascript" src="js/screens/newProfile.js"></script>
                 <script type="text/javascript" src="js/screens/spendExp.js"></script>
+                <script type="text/javascript" src="js/screens/Control.js"></script>
+                <script type="text/javascript" src="js/screens/Plot.js"></script>
 		<!-- /build -->
 		<!-- Bootstrap & Mobile optimization tricks -->
 		<script type="text/javascript">

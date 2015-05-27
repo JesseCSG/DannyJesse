@@ -5,10 +5,12 @@ game.ControlScreen = me.ScreenObject.extend({
         
 	onResetEvent: function() {	
             // on reset, change screen to new-screen.
-		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("new-screen")), -10);
+                me.audio.resumeTrack("zeldaTheme");
+            
+		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("control-screen")), -10);
                 // input and register set to visible.
                 document.getElementById("input").style.visibility = "visible";
-                document.getElementById("register").style.visibility = "visible";
+                document.getElementById("register").style.visibility = "hidden";
                 // unbinds ability keys below.
                 me.input.unbindKey(me.input.KEY.A);
                 me.input.unbindKey(me.input.KEY.S);
@@ -19,16 +21,16 @@ game.ControlScreen = me.ScreenObject.extend({
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function() {
                         this._super(me.Renderable, 'init', [10, 10, 300, 50]);
-                        this.font = new me.Font('Times New Roman', 26, 'black');
+                        this.font = new me.Font('Times New Roman', 26, 'white');
                     },
                     
                     draw: function(renderer) {
                         // draws text below.
                         this.font.draw(renderer.getContext(), "CONTROLS: ", this.pos.x, this.pos.y + 20);
-                        this.font.draw(renderer.getContext(), "Arrrows Keys(Up, Down, Left, Right) for Movement", this.pos.x + 10, this.pos.y + 40);
-                        this.font.draw(renderer.getContext(), "V for Pause.", this.pos.x + 10, this.pos.y + 60);
-                        this.font.draw(renderer.getContext(), "B for In-Game Purchases.", this.pos.x + 10, this.pos.y + 80);
-                        this.font.draw(renderer.getContext(), "A for Attack.", this.pos.x + 10, this.pos.y + 100);
+                        this.font.draw(renderer.getContext(), "Arrow Keys(Up, Down, Left, Right) for Movement", this.pos.x + 15, this.pos.y + 45);
+                        this.font.draw(renderer.getContext(), "V for Pause.", this.pos.x + 15, this.pos.y + 70);
+                        this.font.draw(renderer.getContext(), "B for In-Game Purchases.", this.pos.x + 15, this.pos.y + 95);
+                        this.font.draw(renderer.getContext(), "A for Attack.", this.pos.x + 15, this.pos.y + 120);
                     },
                     
                     update: function() {
@@ -46,6 +48,7 @@ game.ControlScreen = me.ScreenObject.extend({
             // on destroy, set input and register to hidden.
             document.getElementById("input").style.visibility = "hidden";
             document.getElementById("register").style.visibility = "hidden";      
+            me.audio.pauseTrack("zeldaTheme");
 	}
 });
 

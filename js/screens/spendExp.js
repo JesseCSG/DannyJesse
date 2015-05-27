@@ -5,6 +5,8 @@ game.SpendExp = me.ScreenObject.extend({
         
 	onResetEvent: function() {	
             // resets screen with exp-screen.
+                me.audio.playTrack("mozartRemix");
+            
 		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("exp-screen")), -10);
                 // resets bind keys below.
                 me.input.bindKey(me.input.KEY.F1, "F1");
@@ -86,6 +88,7 @@ game.SpendExp = me.ScreenObject.extend({
                 me.input.unbindKey(me.input.KEY.F5, "F5");
                 //unsubscribe handler.
                 me.event.unsubscribe(this.handeler);
+                me.audio.stopTrack("mozartRemix");
 	}
 });
 

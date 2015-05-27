@@ -5,6 +5,8 @@ game.LoadProfile = me.ScreenObject.extend({
         
 	onResetEvent: function() {
             // on reset, change screen to load-screen.
+                me.audio.playTrack("morartRemix");
+            
 		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("load-screen")), -10);
                 // set input and load to visible.
                 document.getElementById("input").style.visibility = "visible";
@@ -43,6 +45,7 @@ game.LoadProfile = me.ScreenObject.extend({
             // on destroy, sets input and load to hidden.
                document.getElementById("input").style.visibility = "hidden";
                document.getElementById("load").style.visibility = "hidden";
+               me.audio.pauseTrack("mozartRemix");
 	}
 });
 
