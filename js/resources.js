@@ -31,7 +31,7 @@ game.resources = [
         {name: "Tree2", type:"image", src: "data/img/Tree2.png"},
         {name: "Wall", type:"image", src: "data/img/Wall.png"},
         {name: "arrow", type:"image", src: "data/img/arrow.png"},
-        {name: "darkGrass", type:"image", src: "data/img/darkGrass1.png"},
+        {name: "darkGrass1", type:"image", src: "data/img/darkGrass1.png"},
         {name: "dirt1", type:"image", src: "data/img/dirt1.png"},
         {name: "flower1", type:"image", src: "data/img/flower1.png"},
         {name: "flower2", type:"image", src: "data/img/flower2.png"},
@@ -40,7 +40,7 @@ game.resources = [
         {name: "lilypad2", type:"image", src: "data/img/lilypad2.png"},
         {name: "pebble1", type:"image", src: "data/img/pebble1.png"},
         {name: "pebble2", type:"image", src: "data/img/pebble2.png"},
-        {name: "road", type:"image", src: "data/img/road1.png"},
+        {name: "road1", type:"image", src: "data/img/road1.png"},
         {name: "sand", type:"image", src: "data/img/sand1.png"},
         {name: "soil", type:"image", src: "data/img/soil1.png"},
         {name: "water1", type:"image", src: "data/img/water1.png"},
@@ -76,7 +76,9 @@ game.resources = [
         {name: "tetrisTheme", type: "audio", src: "data/bgm/"},
         {name: "mozartRemix", type: "audio", src: "data/bgm/"},
         {name: "creepPiano", type: "audio", src: "data/bgm/"},
-        {name: "Elev", type: "audio", src: "data/bgm/"}
+        {name: "Elev", type: "audio", src: "data/bgm/"},
+        {name: "forestTheme", type: "audio", src: "data/bgm/"}
+
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}

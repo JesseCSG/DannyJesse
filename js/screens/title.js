@@ -4,7 +4,7 @@ game.TitleScreen = me.ScreenObject.extend({
 	 */
         
 	onResetEvent: function() {	
-            me.audio.playTrack("zeldaTheme");
+            me.audio.playTrack("forestTheme");
             // resets screen to title-screen.
 		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("title-screen")), -10);
             // initailizes text and font for option 1.
@@ -87,6 +87,6 @@ game.TitleScreen = me.ScreenObject.extend({
 	 *  action to perform when leaving this screen (state change)
 	 */
 	onDestroyEvent: function() {
-            me.audio.pause("zeldaTheme");
+            me.audio.pause("forestTheme");
 	}
 });
