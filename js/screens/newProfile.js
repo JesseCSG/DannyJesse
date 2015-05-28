@@ -44,7 +44,7 @@ game.NewProfile = me.ScreenObject.extend({
             // on destroy, set input and register to hidden.
             document.getElementById("input").style.visibility = "hidden";
             document.getElementById("register").style.visibility = "hidden";     
-            me.audio.pauseTrack("tetrisTheme");
+            me.audio.stopTrack("tetrisTheme");
 	}
 });
 

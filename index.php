@@ -120,7 +120,7 @@
                     .success(function(response) {
                         // If allowed, change screen to PLAY.
                         if(response==="true") {
-                            me.state.change(me.state.PLAY);
+                            me.state.change(me.state.PLOT);
                         }else{
                         // If not allowed, alert player.
                             alert(response);

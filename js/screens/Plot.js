@@ -17,6 +17,7 @@ game.PlotScreen = me.ScreenObject.extend({
                 me.input.unbindKey(me.input.KEY.D);
                 me.input.unbindKey(me.input.KEY.F);
                 me.input.unbindKey(me.input.KEY.B);
+                me.input.bindKey(me.input.KEY.SPACE, "space");
                 // adds font and text to new screen.
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function() {
@@ -26,11 +27,14 @@ game.PlotScreen = me.ScreenObject.extend({
                     
                     draw: function(renderer) {
                         // draws text below.
-                        this.font.draw(renderer.getContext(), "CONTROLS: ", this.pos.x, this.pos.y + 20);
-                        this.font.draw(renderer.getContext(), "Arrow Keys(Up, Down, Left, Right) for Movement", this.pos.x + 15, this.pos.y + 45);
-                        this.font.draw(renderer.getContext(), "V for Pause.", this.pos.x + 15, this.pos.y + 70);
-                        this.font.draw(renderer.getContext(), "B for In-Game Purchases.", this.pos.x + 15, this.pos.y + 95);
-                        this.font.draw(renderer.getContext(), "A for Attack.", this.pos.x + 15, this.pos.y + 120);
+                        this.font.draw(renderer.getContext(), "In the forest; cold, dark, confused.", this.pos.x, this.pos.y + 20);
+                        this.font.draw(renderer.getContext(), "You, Wilton Spann, have found yourself in a predicament.", this.pos.x + 20, this.pos.y + 50);
+                        this.font.draw(renderer.getContext(), "You, whom have awaken in this wilderness, must do", this.pos.x + 20, this.pos.y + 80);
+                        this.font.draw(renderer.getContext(), "what you must do. You must outlast this place to", this.pos.x + 20, this.pos.y + 110);
+                        this.font.draw(renderer.getContext(), "find your home. Can you, through all odds, survive... ", this.pos.x + 20, this.pos.y + 140);
+                        this.font.draw(renderer.getContext(), "THE FOREST!?!?", this.pos.x + 25, this.pos.y + 170);
+                        this.font.draw(renderer.getContext(), "Press SPACE to Start.", this.pos.x + 25, this.pos.y + 200);
+
                     },
                     
                     update: function() {
@@ -38,6 +42,14 @@ game.PlotScreen = me.ScreenObject.extend({
                         return true;
                     }
                 })));
+                
+                this.handeler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge) {                    
+                    if(action === "space") {
+                        // If F1 pressed, then update exp and cost, then change screen to PLAY.
+                        me.state.change(me.state.PLAY);
+                        
+                    }    
+                });
                 
                 
         },
@@ -48,7 +60,10 @@ game.PlotScreen = me.ScreenObject.extend({
             // on destroy, set input and register to hidden.
             document.getElementById("input").style.visibility = "hidden";
             document.getElementById("register").style.visibility = "hidden"; 
-            me.audio.stopTrack("creepPiano"); 
+            me.audio.stopTrack("creepPiano");
+            //unsubscribe handler.
+            me.event.unsubscribe(this.handeler);
+            me.input.unbindKey(me.input.KEY.SPACE);
 	}
 });
 

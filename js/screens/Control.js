@@ -5,7 +5,7 @@ game.ControlScreen = me.ScreenObject.extend({
         
 	onResetEvent: function() {	
             // on reset, change screen to new-screen.
-                me.audio.resumeTrack("zeldaTheme");
+                me.audio.pause("zeldaTheme");
             
 		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage("control-screen")), -10);
                 // input and register set to visible.
@@ -48,7 +48,7 @@ game.ControlScreen = me.ScreenObject.extend({
             // on destroy, set input and register to hidden.
             document.getElementById("input").style.visibility = "hidden";
             document.getElementById("register").style.visibility = "hidden";      
-            me.audio.pauseTrack("zeldaTheme");
+            me.audio.pause("zeldaTheme");
 	}
 });
 

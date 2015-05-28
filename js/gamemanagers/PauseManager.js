@@ -75,7 +75,7 @@ game.PauseManager = Object.extend({
     },
     
     stopPausing: function() {
-        me.audio.pauseTrack("Elev");
+        me.audio.stopTrack("Elev");
         // no longer pauses. change screen to PLAY.
         this.pausing = false;
         me.state.resume(me.state.PLAY);
